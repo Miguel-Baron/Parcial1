@@ -7,7 +7,8 @@ from bs4 import BeautifulSoup
 
 
 def download_file():
-    url = 'https://casas.mitula.com.co/searchRE/nivel3-Chapinero/nivel2-Bogotá/nivel1-Cundinamarca/q-Bogotá-Chapinero'
+    url = 'https://casas.mitula.com.co/searchRE/nivel3-Chapinero/ \
+      nivel2-Bogotá/nivel1-Cundinamarca/q-Bogotá-Chapinero'
 
     # Descargar el archivo
     headers = {
