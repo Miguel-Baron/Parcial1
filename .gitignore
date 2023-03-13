@@ -1,0 +1,7 @@
+.c9
+.git
+.pytest_cache
+__pycache__
+bin
+lib
+README.md

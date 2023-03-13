@@ -1,0 +1,40 @@
+{
+    "dev": {
+        "app_function": "apps.f",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "project_name": "parcial1",
+        "runtime": "python3.8",
+        "s3_bucket": "landing-casas",
+        "events": [{
+           "function": "apps.f",
+           "expression": "cron(00 14 ? * MON *)" 
+           }
+       ]},
+    "dev2": {
+        "app_function": "apps.f2",
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "manage_roles": false,
+        "apigateway_enabled": false,
+        "project_name": "parcial1",
+        "runtime": "python3.8",
+        "s3_bucket": "casas-final",
+         "events": [{
+           "function": "apps.f2", // The function to execute
+           "event_source":{
+               "arn": "arn:aws:s3:::landing-casas",
+               "events":[
+                   "s3:ObjectCreated:*"
+                   ]
+           }
+       }]
+
+    }
+}
