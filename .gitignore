@@ -2,7 +2,5 @@
 .git
 .pytest_cache
 __pycache__
-bin
-lib
-README.md
 env
+README.md
