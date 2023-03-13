@@ -13,9 +13,10 @@ def download_file():
 
     # Descargar el archivo
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-                  '(KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+    'User-Agent': ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                   '(KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36')
     }
+
     response = requests.get(url, headers=headers)
 
     return response
@@ -48,7 +49,8 @@ def f():
 def f2():
     s3 = boto3.resource('s3')
     s3_bucket = s3.Bucket('landing-casas')
-    obj = s3_bucket.Object(f"{datetime.datetime.now().strftime('%Y-%m-%d')}.html")
+    obj = s3_bucket.Object(f"{datetime.datetime.now().strftime('%Y-%m-%d')}"
+                       ".html")
     body = obj.get()['Body'].read()
 
     # Pasar el contenido HTML de la respuesta HTTP GET a un objeto BeautifulSoup
